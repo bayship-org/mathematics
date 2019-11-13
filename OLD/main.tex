@@ -1,0 +1,192 @@
+\newqed\documentclass{article}
+%color 使えない \colorlet{grayfz}{gray!40}
+% line numbers
+%\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\renewcommand{\baselinestretch}{1.2}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{mathtools,amsfonts,amssymb,amsthm}
+\usepackage{graphicx}
+\definecolor{ocre}{RGB}{52,177,201}
+\definecolor{grayfz}{RGB}{210,200,190}
+
+%lineno
+\usepackage[right]{lineno}
+\renewcommand{\linenumberfont}{\normalfont\bfseries\small\color{grayfz}}
+%theorem
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{notation}{Notation rule}[section]
+ \newtheorem{proposition}{Proposition}
+ \newtheorem{lemma}{Lemma}
+ \newtheorem{corollary}{Corollary}
+  \newtheorem{conjecture}{Conjecture}[section]
+  \newtheorem{axiom}{Axiom}[section]
+  
+\newcommand{\newspc}{\textcolor{white}{s}}
+\newcommand{\newspace}{\textcolor{white}{1234567890}}
+\newcommand{\newqed}{\newspc{\hfill\color{ocre}\ensuremath{\blacksquare}}}
+\newcommand{\newdef}{_{def}}
+\newcommand{\newland}{\newspc_{and}$\land$\newspc}
+\newcommand{\newvee}{\newspc_{or}$\vee$\newspc}
+\newcommand{\newset}{\newspc{$\overset{\mathrm{\{\}}}{..}$}}
+\newcommand{\newcmnt}{\newspc in\_terms\_of \newspc}
+\newcommand{\newset}{\newspc \#set\#def \newspc}
+\newcommand{\newsub}{\newspc \#subset\#set\#where \newspc}
+\newcommand{\newfunc}{\newspc \#function\#def \newspc}
+
+ 
+\title{Order consistent logic}
+\author{Shigeo Hattori}
+\date{\today
+\\{\small First version: November, 2019}
+\\{\small bayship.org@gmail.com}
+\\{\small \url{https://github.com/bayship-org/mathematics}}
+}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+\section{Prerequisite definitions and notations }
+\\\url{https://github.com/bayship-org/mathematics/blob/master/Minor_of_memBer.pdf}
+\\\newspc
+\begin{itemize}
+\end{itemize}
+\linenumbers
+In the article above, in its first two pages, all prerequisite definitions for this article are given. Especially, the second page of the above article defines that two memBers $(x,y)$ are said ($x$ is a \textbf{minor} of $y$).
+
+
+\begin{definition}
+\newspc\\"And" is also written as "\newland".
+\\"Or" is also written as "\newvee".
+\newqed
+
+\end{definition}
+
+\section{Introduction}
+\\This article defines new words, \textbf{"a logical expression is order consistent"}, and gives a conjecture for the new words and the notion of minors of memBers. In the rest of this introduction, the main conjecture is roughly introduced in a style of an example.
+\\\newspc
+\\Let $(X,T^2)$ be the Euclidean space of 2-dimension.
+\\Let $x1$ be some closed line segment in terms of some coordinate system.
+\\Let $C:=\{x$ $|$ $((T^2,x),(T^2,x1))$ are isomorphic $\}$.
+\\Let $f$ be a function on $C$ as $f(x)=$length$(x)$.
+\\Take $\foray y:\in$ image$(f)$,
+\\Let $k:=\{x$ $|$ $f(x)=y\}$.
+\\Then the conjecture claim that
+\\if the definition of $k$ is order consistent
+\\then $k$ is a minor of $(X,T^2)$.
+\newqed
+
+\section{Definitions}
+
+
+
+\begin{definition}[Order consistent]
+\newspc\\Take $\forall L$ as a logical expression such that *1 holds. 
+\\Then $L$ is said order consistent.
+\begin{description}
+\item [1.] Take $\forall (f,p,q,r,d1,d2)$ 
+\\such that (*2 \newland ..... \newland *9) holds
+\\then (*10 \newland *11) holds. 
+\item [2.] $L$ defines $f$.
+\item[3.] $f$ is a function. 
+\item[4.] $\{p,q,r\}\subset$ domain$(f)$.
+\item[5.] $(d1,d2)$ are total orders on $\{p,q,r\}$.
+\item [6.] Take $\forall d:\in \{d1,d2\}$.
+\item[7.] Take $\forall (s,t):\in d$.
+\item[8.] There exists $\exists x:\in$domain$(f)$.
+\item[9.] Evaluation of $f(x)$ refers to $(s,t)$.
+\item [10.] $d1=d2$.
+\item [11.]If $p< q< r$ 
+\\then $f(p)\leq f(q) \leq f(r) \vee  f(r)\leq f(q) \leq f(p)$.
+\newqed
+\end{description}
+\end{definition}
+
+\section{Main conjecture}
+
+\begin{conjecture}[Main conjecture]
+
+\newspc \\Let $(n,X,T^n)$ be the Euclidean space of $n$-dimension.
+\\Take $\forall (L,f,k)$ such that (*1  \newland ..... \newland *3).
+\\Then $k$ is a minor of $(X,T^n)$.
+\begin{description}
+\item[1.] $L$ is an order consistent logical expression.
+\item[2.] $L$ takes $(n,X,T^n)$ as the antecedent.
+\item[3.] $L$ as a consequent specifies a function $f$ relatively to the antecedent,$(n,X,T^n)$.
+\item[4] There exists $\exists y:\in$ image$(f)$. Then $k=\{x\in$ domain$(f)$ $|$ $f(x)=y\}$.
+\end{description}
+\newqed
+\end{conjecture}
+\\
+\section{Examples}
+This section just gives examples of substituting actual values into variables of the antecedent of the main conjecture.
+\\
+\begin{definition}[Unknot]
+\newspc\\For the main conjecture,this example substitutes values 
+\\into $L$ as (*1 \newland ..... \newland *10).
+\begin{description}
+\item[1.] $n$:=3.
+\item[2.] $(n,X,T^n)$ is the Euclidean space $(X,T^n)$ of $n$-dimension.
+\item[3.] Let $x1$ be an unknot.
+\item[4.] Let $C:=\{x$ $|$ $((T^n,x),(T^n,x1))$ are isomorphic $\}$.
+\item[5.] Take $\forall x:\in C$.
+\item[6.] $f1(x):=\{d$ $|$ $d$ is a proper knot diagram of $x\}$.
+\item[7.] $f2(x):=\{r$ $|$ 
+\\$\exists d:\in f1(x)$ \newland 
+\\$r$ is the number of crossings on $d$
+\\$\}$.
+\item[8.] $f(x)$ returns the maximum number of $f2(x)$.
+\item[19.] Take $\forall y:\in$ image$(f)$. 
+\item[10.] \footnote{For example, you can specify $y$ as $y:=10$.}
+Let $k:=\{x\in$ domain$(f)$ $|$ $f(x)=y \}$
+\end{description}
+\newspc\newqed
+\end{definition}
+\\
+\begin{proposition}[Non order consistent]
+\newspc\\Refer to $f$ of the previous definition. 
+\\Let $g(x):=(f(x)-2)^2$. 
+\\Then the definition of $g$ is not order consistent. 
+\newspc\newqed
+\end{proposition}
+\begin{proof}
+\newspc
+\begin{itemize}
+    \item Refer to the previous definition for $f2$.
+    \item The definition of $g$ is dependent on $f2$ and the standard order on image($f2$).
+    \item By the way, let $(p,q,r):=(1,2,3)$. 
+    \item Then $p \textless q \textless r$ \newspc $\land$ \newspc $g(q) \textless g(p)=g(r)$.
+    
+\end{itemize}
+\end{proof}
+\\
+
+\pagebreak
+\\
+\section{Appendix-Specification}
+\\In mathematics, to specify an entity is always relative to the context. For example, let the antecedent take $\forall (n,X,T,M)$ as a Euclidean space $(X,Y,M)$ of  $n$ dimension then as the consequent you can not specify any single point of the space. Contrary, if the antecedent has taken a coordinate system $C$, the consequent can specify any point of the space relatively to the antecedent. 
+\\Although the Euclidean space $(X,T,M)$ is not specified the specific dimension, $(X,T,M)$ is said specified for the consequent. But $(X,T,M)$ is not said specified for the antecedent.
+
+\begin{definition}
+\\For all variable $x$ of the consequent, if exactly one entity of the antecedent can be substituted into $x$ then $x$ is said having been specified relatively to the antecedent. 
+\newqed
+\end{definition}
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
